@@ -1,0 +1,20 @@
+PS C:\Users\seiji\common-lisp\callcc> sbcl -callcc.asd
+This is SBCL 2.2.8, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+CL-USER(1): (asdf:load-system :callcc)
+
+T
+CL-USER(2): (in-package :callcc)
+
+#<PACKAGE "CALLCC">
+CALLCC(3): (=defun test-tail (n)
+        (print n)
+        (test-tail (1+ n)))
+
+=TEST-TAIL
+CALLCC(4): (test-tail 0) 

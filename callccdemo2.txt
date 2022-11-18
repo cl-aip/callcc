@@ -1,0 +1,59 @@
+PS C:\Users\seiji\common-lisp\callcc> ls    
+
+    Directory: C:\Users\seiji\common-lisp\callcc
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          2022/11/14    13:17            276 callcc.asd     
+-a---          2022/11/14    13:36           5247 callcc.lisp    
+-a---          2022/09/23    12:51           4757 callcc.lpr     
+-a---          2022/11/14    13:29            647 callccdemo1.txt
+-a---          2022/09/23    12:51            135 package.lisp   
+
+PS C:\Users\seiji\common-lisp\callcc> sbcl -callcc.asd
+This is SBCL 2.2.8, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+CL-USER(1): (asdf:load-system :callcc)
+
+; compiling file "C:/Users/seiji/common-lisp/callcc/callcc.lisp" (written 14 NOV 2022 01:36:44 PM):
+
+; wrote C:/Users/seiji/AppData/Local/cache/common-lisp/sbcl-2.2.8-win-x64/C/Users/seiji/common-lisp/callcc/callcc-tmpGHU3ALSV.fasl
+; compilation finished in 0:00:00.025
+
+; file: C:/Users/seiji/common-lisp/callcc/callcc.lisp
+; in: SETQ CALLCC::-CONT-
+;     (SETQ CALLCC::-CONT- #'VALUES)
+;
+; caught WARNING:
+;   undefined variable: CALLCC::-CONT-
+;
+; compilation unit finished
+;   Undefined variable:
+;     CALLCC::-CONT-
+;   caught 1 WARNING condition
+T
+CL-USER(2): (in-package :callcc)
+
+#<PACKAGE "CALLCC">
+CALLCC(3): (choose-bind x '(marrakesh strasbourg vegas)
+             (format nil "Let's go to ~A." x))
+
+"Let's go to MARRAKESH."
+CALLCC(4): (fail)      
+
+Failed.
+"Let's go to STRASBOURG."
+CALLCC(5): (fail)
+
+Failed.
+"Let's go to VEGAS."
+CALLCC(5): (fail)
+
+Failed.
+@
+CALLCC(5):
